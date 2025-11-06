@@ -26,8 +26,11 @@ Installation et démarrage de l’API
 
 
 git clone https://github.com/Chocolaterie/ApiArticle.git
+
 cd ApiArticle
+
 npm install
+
 npm start
 
 L’API sera accessible sur :
