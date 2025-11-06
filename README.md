@@ -25,6 +25,7 @@ npm start
 ```
 Accédez ensuite à l’application via :
 👉 http://localhost:4200
+
 🖥️ Installation et démarrage de l’API
 ```
 git clone https://github.com/Chocolaterie/ApiArticle.git
