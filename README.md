@@ -15,6 +15,7 @@ Ce repository combine **une application Angular** et **une API NodeJS**, offrant
 ```
 npm install -g @angular/cli
 ````
+
 🧩 Installation de l’application
 ```
 git clone https://github.com/Raphael-Jolivel/AngularJS-Articles
