@@ -35,6 +35,7 @@ L’API sera disponible à l’adresse :
 👉 http://localhost:3000
 
 🗂️ Structure du projet
+```
 public/                → Ressources statiques (icônes, images)
 src/app/classes/       → Modèles TypeScript (Article, User)
 src/app/components/    → Composants réutilisables (footer, gardes)
@@ -43,60 +44,64 @@ src/app/services/      → Logique métier & appels API
 angular.json           → Configuration Angular
 package.json           → Dépendances et scripts
 README.md              → Documentation du projet
+```
 
 🏷️ Fonctionnalités clés
 
 👤 Gestion des utilisateurs
 
-Création/mock de comptes avec token stocké dans le localStorage
+- Création/mock de comptes avec token stocké dans le localStorage
 
-Connexion / Déconnexion
+- Connexion / Déconnexion
 
-Accès sécurisé aux fonctionnalités avancées
+- Accès sécurisé aux fonctionnalités avancées
 
-Redirection automatique si non autorisé
+- Redirection automatique si non autorisé
 
 Comptes de test disponibles :
-| Email                                     | Mot de passe |
-| [isaac@gmail.com](mailto:isaac@gmail.com) | password     |
-| [tata@gmail.com](mailto:tata@gmail.com)   | 123456       |
-| [toto@gmail.com](mailto:toto@gmail.com)   | 12345        |
+```
+isaac@gmail.com | password
 
+tata@gmail.com | 123456
+
+toto@gmail.com | 12345
+
+```
 📰 Gestion des articles
 
-Liste publique, consultation, création, édition & suppression d’articles
+- Liste publique, consultation, création, édition & suppression d’articles
 
-Validation de formulaire (image facultative)
+- Validation de formulaire (image facultative)
 
-Vue détaillée : titre, image, description, auteur
+- Vue détaillée : titre, image, description, auteur
 
-Gestion accessible à tout utilisateur connecté
+- Gestion accessible à tout utilisateur connecté
 
 ⚙️ Outils et administration
 
-Page /manage pour éditer/supprimer tous les articles
+- Page /manage pour éditer/supprimer tous les articles
 
-API réinitialisée à chaque redémarrage pour faciliter les tests
+- API réinitialisée à chaque redémarrage pour faciliter les tests
 
 🧭 Navigation simplifiée
 
-Footer universel donnant un accès rapide à :
+- Footer universel donnant un accès rapide à :
 
-Connexion / Déconnexion
+- Connexion / Déconnexion
 
-Accueil (liste des articles)
+- Accueil (liste des articles)
 
-Publication d’un article
+- Publication d’un article
 
-Gestion des articles
+- Gestion des articles
 
 💡 Particularités techniques
 
-Responsive design : compatible mobile, tablette et desktop
+- Responsive design : compatible mobile, tablette et desktop
 
-Interface fluide : formulaires avec validation en temps réel
+- Interface fluide : formulaires avec validation en temps réel
 
-Égalité des droits : tous les utilisateurs connectés peuvent gérer les articles
+- Égalité des droits : tous les utilisateurs connectés peuvent gérer les articles
 
 👑 Auteur
 
