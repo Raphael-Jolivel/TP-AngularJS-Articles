@@ -1,0 +1,67 @@
+<div class="login-page-container">
+  <div class="login-card-modern">
+    <h1 class="login-title-modern">
+      <span>Inscription</span>
+    </h1>
+    <form #form="ngForm">
+      <div>
+        <label for="email">Email</label>
+        <input id="email" name="email" [(ngModel)]="user.email"
+               #email="ngModel" placeholder="Votre email *" type="email" required email/>
+        <div class="custom-alert-danger"
+             *ngIf="email.invalid && (email.dirty || email.touched)">
+          <div *ngIf="email.errors?.['required']">L'email est obligatoire.</div>
+          <div *ngIf="email.errors?.['email']">Veuillez saisir un email valide.</div>
+        </div>
+      </div>
+      <div>
+        <label for="pseudo">Nom d'utilisateur</label>
+        <input id="pseudo" name="pseudo" [(ngModel)]="user.pseudo"
+               placeholder="Nom d'utilisateur *" type="text" #pseudo="ngModel" required/>
+        <div class="custom-alert-danger"
+             *ngIf="pseudo.invalid && (pseudo.dirty || pseudo.touched)">
+          <div *ngIf="pseudo.errors?.['required']">Le nom d'utilisateur est obligatoire.</div>
+        </div>
+      </div>
+      <div>
+        <label for="cityCode">Code postal</label>
+        <input id="cityCode" name="cityCode" [(ngModel)]="user.cityCode" placeholder="Code postal" type="number"/>
+      </div>
+      <div>
+        <label for="city">Ville</label>
+        <input id="city" name="city" [(ngModel)]="user.city" placeholder="Ville" type="text"/>
+      </div>
+      <div>
+        <label for="phone">Numéro de téléphone</label>
+        <input id="phone" name="phone" [(ngModel)]="user.phone" placeholder="Numéro de téléphone" type="text"/>
+      </div>
+      <div>
+        <label for="password">Mot de passe</label>
+        <input id="password" name="password" [(ngModel)]="user.password"
+               #password="ngModel" placeholder="Mot de passe *" type="password" required minlength="5"/>
+        <div class="custom-alert-danger"
+             *ngIf="password.invalid && (password.dirty || password.touched)">
+          <div *ngIf="password.errors?.['required']">Le mot de passe est obligatoire.</div>
+          <div *ngIf="password.errors?.['minlength']">Le mot de passe doit contenir au moins 5 caractères.</div>
+        </div>
+      </div>
+      <div>
+        <label for="passwordConfirm">Confirmation du mot de passe</label>
+        <input id="passwordConfirm" name="passwordConfirm" [(ngModel)]="user.passwordConfirm"
+               placeholder="Confirmez votre mot de passe *" required type="password" #passwordConfirm="ngModel"/>
+        <div class="custom-alert-danger"
+             *ngIf="passwordConfirm.invalid && (passwordConfirm.dirty || passwordConfirm.touched)">
+          <div *ngIf="passwordConfirm.errors?.['required']">La confirmation est obligatoire.</div>
+        </div>
+      </div>
+      <button class="login-btn-modern" [disabled]="form.invalid" (click)="sendFormData()">
+        S'inscrire
+      </button>
+      <div class="uk-text-danger uk-text-center uk-margin-small">{{ error }}</div>
+    </form>
+    <p class="uk-text-meta uk-text-center uk-margin-top">
+      Vous avez déjà un compte ? <a [routerLink]="['/login']" class="uk-link-text">Se connecter &rarr;</a>
+    </p>
+  </div>
+</div>
+

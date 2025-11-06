@@ -1,0 +1,55 @@
+<div class="login-page-container">
+  <div class="login-card-modern">
+    <h1 class="login-title-modern">
+      <span>Connexion</span>
+    </h1>
+    <form #form="ngForm">
+      <div>
+        <label for="email">Email</label>
+        <input
+          id="email"
+          name="email"
+          [(ngModel)]="user.email"
+          placeholder="Votre email *"
+          type="email"
+          #email="ngModel"
+          required
+          email
+        />
+        <div class="custom-alert-danger" *ngIf="email.invalid && (email.dirty || email.touched)">
+          <div *ngIf="email.errors?.['required']">L'email est obligatoire.</div>
+          <div *ngIf="email.errors?.['email']">Veuillez saisir un email valide.</div>
+        </div>
+      </div>
+      <div>
+        <label for="password">Mot de passe</label>
+        <input
+          id="password"
+          name="password"
+          [(ngModel)]="user.password"
+          placeholder="Mot de passe *"
+          type="password"
+          #password="ngModel"
+          required
+        />
+        <div class="custom-alert-danger" *ngIf="password.invalid && (password.dirty || password.touched)">
+          <div *ngIf="password.errors?.['required']">Le mot de passe est obligatoire.</div>
+        </div>
+      </div>
+      <button
+        class="login-btn-modern"
+        [disabled]="form.invalid"
+        (click)="sendFormData()"
+      >
+        Se connecter
+      </button>
+      <div class="uk-text-danger uk-text-center uk-margin-small">{{ error }}</div>
+      <p class="uk-text-meta uk-text-center uk-margin-top">
+        Pas encore de compte ? <a [routerLink]="['/register']">Créer un compte &rarr;</a>
+      </p>
+      <p class="uk-text-meta uk-text-center">
+        Mot de passe oublié ? <a [routerLink]="['/reset-password']">Réinitialiser mon mot de passe</a>
+      </p>
+    </form>
+  </div>
+</div>

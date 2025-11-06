@@ -1,0 +1,26 @@
+<h1 class="management-title">
+  <span>Gestion articles</span>
+</h1>
+
+<div class="management-cards-container">
+  @for (article of articles; track article) {
+    <div class="management-card">
+      <div class="management-card-media">
+        <img src="{{article?.imgPath}}" alt="Image article">
+      </div>
+      <div class="management-card-body">
+        <h3 class="management-card-title">{{ article.title }}</h3>
+        <p class="management-card-meta"><em>By {{ article.author }}</em></p>
+        <p class="management-card-desc"><b>Description :</b> {{ article.desc }}</p>
+        <div class="management-card-actions">
+          <button class="login-btn-modern" [routerLink]="['../edit', article.id]">
+            <i class="fa-regular fa-pen-to-square"></i>Modifier
+          </button>
+          <button class="login-btn-modern" style="background:#e86464;" (click)="onClickDelete(article.id)">
+            <i class="fa-regular fa-trash-can"></i> Supprimer
+          </button>
+        </div>
+      </div>
+    </div>
+  }
+</div>

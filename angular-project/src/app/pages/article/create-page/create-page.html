@@ -1,0 +1,74 @@
+<div class="login-page-container">
+  <div class="login-card-modern">
+    <h1 class="login-title-modern">
+      <span *ngIf="id === ''">Créer article</span>
+      <span *ngIf="id !== ''">Modifier article</span>
+    </h1>
+    <form #form="ngForm">
+      <div>
+        <label for="title">Titre de l'article *</label>
+        <input
+          id="title"
+          name="title"
+          type="text"
+          [(ngModel)]="article.title"
+          placeholder="Entrer le titre"
+          #title="ngModel"
+          required
+        />
+        <div class="custom-alert-danger" *ngIf="title.invalid && (title.dirty || title.touched)">
+          <div *ngIf="title.errors?.['required']">Le titre est requis</div>
+        </div>
+      </div>
+      <div>
+        <label for="desc">Description *</label>
+        <input
+          id="desc"
+          name="desc"
+          type="text"
+          [(ngModel)]="article.desc"
+          placeholder="Entrer la description"
+          #desc="ngModel"
+          required
+        />
+        <div class="custom-alert-danger" *ngIf="desc.invalid && (desc.dirty || desc.touched)">
+          <div *ngIf="desc.errors?.['required']">La description est requise</div>
+        </div>
+      </div>
+      <div>
+        <label for="author">Auteur *</label>
+        <input
+          id="author"
+          name="author"
+          type="text"
+          [(ngModel)]="article.author"
+          placeholder="Entrer le nom de l'autheur"
+          #author="ngModel"
+          required
+        />
+        <div class="custom-alert-danger" *ngIf="author.invalid && (author.dirty || author.touched)">
+          <div *ngIf="author.errors?.['required']">Le nom est requis</div>
+        </div>
+      </div>
+      <div *ngIf="id === ''">
+        <label for="imgPath">Lien vers l'image (optionnel)</label>
+        <input
+          id="imgPath"
+          name="imgPath"
+          type="text"
+          [(ngModel)]="article.imgPath"
+          placeholder="Entrer lien vers l'image"
+        />
+      </div>
+      <div style="display:flex;justify-content:center;align-items:center;gap:2rem;">
+        <button class="login-btn-modern" [disabled]="form.invalid" *ngIf="id === ''" (click)="onClickUpdate(article)">
+          Publier
+        </button>
+        <button class="login-btn-modern"  [disabled]="form.invalid" *ngIf="id !== ''" (click)="onClickUpdate(article)">
+          Sauvegarder
+        </button>
+      </div>
+      <span class="create-form-error">{{ error }}</span>
+    </form>
+  </div>
+</div>

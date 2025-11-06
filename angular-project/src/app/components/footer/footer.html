@@ -1,0 +1,30 @@
+<div class="custom-footer-wrapper">
+  <footer class="custom-footer-nav">
+    <ng-container *ngIf="!authService.isLoggedIn(); else loggedIn">
+      <a class="custom-footer-btn" [routerLink]="['/login']">Connexion</a>
+    </ng-container>
+    <a class="custom-footer-btn" [routerLink]="['/articles']">
+      <i class="fa-regular fa-newspaper"></i> Accueil
+    </a>
+    <a class="custom-footer-btn" [routerLink]="['/manage']">
+      <i class="fa-regular fa-folder-open"></i> Gestion articles
+    </a>
+    <a class="custom-footer-btn" [routerLink]="['/create']">
+      <i class="fa-solid fa-pen"></i> Écrire un article
+    </a>
+    <ng-template #loggedIn>
+      <button class="custom-footer-btn" (click)="onClickLogout()">
+        <i class="fa-solid fa-door-open"></i> Deconnexion
+      </button>
+    </ng-template>
+  </footer>
+
+  <div class="custom-footer-extra">
+    <span>
+      &copy; {{ currentYear }}
+      <a class="custom-footer-link" href="https://github.com/Raphael-Jolivel/TP-AngularJS-Articles" target="_blank" rel="noopener">
+        Articles
+      </a>. Tous droits réservés.
+    </span>
+  </div>
+</div>

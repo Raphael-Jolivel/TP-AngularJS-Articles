@@ -1,0 +1,19 @@
+<h1 class="home-title">
+  <span>Articles Liste</span>
+</h1>
+
+<div class="home-cards-container">
+  @for (article of articles; track article) {
+    <div
+      class="home-card"
+      [routerLink]="['/article/', article.id]"
+    >
+      <div class="home-card-media">
+        <img src="{{article?.imgPath}}" alt="Image article">
+      </div>
+      <div class="home-card-body">
+        <h3 class="home-card-title">{{ article.title }}</h3>
+      </div>
+    </div>
+  }
+</div>

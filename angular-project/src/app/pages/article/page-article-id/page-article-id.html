@@ -1,0 +1,19 @@
+<h1 class="uk-heading-line uk-text-center uk-margin-large-bottom">
+  <span>{{ article?.title }}</span>
+</h1>
+
+<div class="uk-flex uk-flex-center uk-flex-column uk-container uk-margin-large-bottom uk-width-1-2@s">
+  <div class="uk-card uk-card-default uk-card-body uk-box-shadow-small">
+    <div class="uk-flex uk-flex-center uk-margin-bottom">
+      <img
+        src="{{article?.imgPath}}"
+        alt="Image article"
+        style="max-width: 100%; max-height: 300px; object-fit: cover; border-radius: 8px;"
+      >
+    </div>
+    <div class="uk-margin-small uk-text-justify">
+      <p class="uk-text-lead uk-margin-bottom">{{ article?.desc }}</p>
+      <p class="uk-text-meta uk-text-right" style="font-style: italic">{{ article?.author }}</p>
+    </div>
+  </div>
+</div>
